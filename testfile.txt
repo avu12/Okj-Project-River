@@ -1,0 +1,5 @@
+Duna;1000
+Tiszta;500
+MintaFolyó;10
+MintaFolyó2;20
+AlmafaAmiNemIsFolyóIgazából;5000
