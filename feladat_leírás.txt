@@ -1,0 +1,11 @@
+A program fájlokban tárolt adatokat tudjon feldolgozni. A fájlok szerkezete és tartalma mindig olyan, hogy a sorok egyforma szerkezetűek. -> fileoperations [N.ZS.]
+Egy folyónév, és egy folyó hossz értékéből álljon például pontosvesszővel elválasztva. -> fileoperations [N.ZS.]
+Lehessen új fájlt, üreset készíteni vele. -> fileoperations [N.ZS.]
+A már meglévő fájlhoz lehessen hozzáfűzni újabb adatsort a programból. -> fileoperations [N.ZS.]
+A felhasználó adhasson meg folyónév hossz párost. -> fileoperations [N.ZS.]
+
+A program tudjon átlagos, maximális, minimális folyóhosszat meghatározni adott fájl adatainak felhasználásával. -> getdata [D.Z.]
+Lehessen keresni benne, hogy van-e a fájlban a megadott folyóról hosszadat. -> getdata [D.Z.]
+A program tudja kiírni egy fájl adatait. -> getdata [D.Z.]
+
+A program az induláskor egy menürendszer segítségével kínálja fel a szolgáltatását, amelynek nem kell grafikusan kidolgozottak lennie. -> menu [B.T.]
