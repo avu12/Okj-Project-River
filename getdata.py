@@ -58,7 +58,30 @@ def max_river(filename):
 
 
 def avg_river(filename):
-    pass
+    folyok = []
+    try:
+        f = open(filename,"r")
+    except OSError as e:
+        print(e)
+        return -1
+   
+    for sor in f:
+        sor = sor[:-1].split(";")
+        sor[1] = int(sor[1])
+        folyok.append(sor)
+    f.close()
+
+    if len(folyok) == 0 :
+        print("Empty file!")
+        return 0
+
+    atlag = 0
+    osszeg = 0
+    for f in folyok:
+        osszeg = osszeg + f[1]
+    atlag = osszeg / len(folyok)
+    print("Average river value:\n" + str(atlag) )
+    
 
 #TODO
 def river_exist(filename,rivername):
