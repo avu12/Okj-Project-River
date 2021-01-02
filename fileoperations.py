@@ -1,15 +1,11 @@
 #TODO
-def create_file():
-    filename = input("Give me a filename:")
+def create_file(filename):
     f = open(filename,"w")
     f.close()
 
 #TODO
-def add_data_to_file():
-   filename = input("Give me a filename:")
+def add_data_to_file(river_name,river_size,filename):
    f = open(filename,"a")
-   river_name = input("River name:")
-   river_size = input("River size:")
    try:
        river_size = int(river_size)
    except ValueError as e:
