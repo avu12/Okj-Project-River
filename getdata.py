@@ -109,6 +109,25 @@ def river_exist(filename,rivername):
     print(rivername+ " river not exist in "+filename )
     return 0
 
-#TODO
+
 def print_all_data(filename):
-    pass
+    folyok = []
+    try:
+        f = open(filename,"r")
+    except OSError as e:
+        print(e)
+        return -1
+   
+    for sor in f:
+        sor = sor[:-1].split(";")
+        sor[1] = int(sor[1])
+        folyok.append(sor)
+    f.close()
+
+    if len(folyok) == 0 :
+        print("Empty file!")
+        return 0
+    print(filename + " file content:")    
+    for f in folyok:
+        print(f[0]+" "+str(f[1]))
+
