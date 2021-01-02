@@ -83,9 +83,31 @@ def avg_river(filename):
     print("Average river value:\n" + str(atlag) )
     
 
-#TODO
+
 def river_exist(filename,rivername):
-    pass
+    folyok = []
+    try:
+        f = open(filename,"r")
+    except OSError as e:
+        print(e)
+        return -1
+   
+    for sor in f:
+        sor = sor[:-1].split(";")
+        sor[1] = int(sor[1])
+        folyok.append(sor)
+    f.close()
+
+    if len(folyok) == 0 :
+        print("Empty file!")
+        return 0
+
+    for f in folyok:
+        if f[0] == rivername:
+            print(rivername+ " river exist in "+filename )
+            return 0
+    print(rivername+ " river not exist in "+filename )
+    return 0
 
 #TODO
 def print_all_data(filename):
