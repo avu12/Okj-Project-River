@@ -1,17 +1,10 @@
-
+folyok = []
 def min_river(filename):
     folyok = []
-    try:
-        f = open(filename,"r")
-    except OSError as e:
-        print(e)
+    fr = fileread(filename,folyok)
+    
+    if fr == -1:
         return -1
-   
-    for sor in f:
-        sor = sor[:-1].split(";")
-        sor[1] = int(sor[1])
-        folyok.append(sor)
-    f.close()
 
     if len(folyok) == 0 :
         print("Empty file!")
@@ -26,21 +19,12 @@ def min_river(filename):
 
     print("Minimum river name and value:\n" + min_name+ " " + str(min_value) )
 
-
-
 def max_river(filename):
     folyok = []
-    try:
-        f = open(filename,"r")
-    except OSError as e:
-        print(e)
+    fr = fileread(filename,folyok)
+    
+    if fr == -1:
         return -1
-   
-    for sor in f:
-        sor = sor[:-1].split(";")
-        sor[1] = int(sor[1])
-        folyok.append(sor)
-    f.close()
 
     if len(folyok) == 0 :
         print("Empty file!")
@@ -55,21 +39,12 @@ def max_river(filename):
 
     print("Maximum river name and value:\n" + max_name+ " " + str(max_value) )
 
-
-
 def avg_river(filename):
     folyok = []
-    try:
-        f = open(filename,"r")
-    except OSError as e:
-        print(e)
+    fr = fileread(filename,folyok)
+    
+    if fr == -1:
         return -1
-   
-    for sor in f:
-        sor = sor[:-1].split(";")
-        sor[1] = int(sor[1])
-        folyok.append(sor)
-    f.close()
 
     if len(folyok) == 0 :
         print("Empty file!")
@@ -82,21 +57,12 @@ def avg_river(filename):
     atlag = osszeg / len(folyok)
     print("Average river value:\n" + str(atlag) )
     
-
-
 def river_exist(filename,rivername):
     folyok = []
-    try:
-        f = open(filename,"r")
-    except OSError as e:
-        print(e)
+    fr = fileread(filename,folyok)
+    
+    if fr == -1:
         return -1
-   
-    for sor in f:
-        sor = sor[:-1].split(";")
-        sor[1] = int(sor[1])
-        folyok.append(sor)
-    f.close()
 
     if len(folyok) == 0 :
         print("Empty file!")
@@ -104,14 +70,29 @@ def river_exist(filename,rivername):
 
     for f in folyok:
         if f[0] == rivername:
-            print(rivername+ " river exist in "+filename )
+            print(rivername+ " river exist in "+str(filename) )
             return 0
-    print(rivername+ " river not exist in "+filename )
+    print(rivername+ " river not exist in "+str(filename) )
     return 0
 
 
 def print_all_data(filename):
     folyok = []
+    fr = fileread(filename,folyok)
+    
+    if fr == -1:
+        return -1
+
+    if len(folyok) == 0 :
+        print("Empty file!")
+        return 0
+
+    print(str(filename) + " file content:")    
+    for f in folyok:
+        print(f[0]+" "+str(f[1]))
+
+
+def fileread(filename,folyok):
     try:
         f = open(filename,"r")
     except OSError as e:
@@ -123,11 +104,4 @@ def print_all_data(filename):
         sor[1] = int(sor[1])
         folyok.append(sor)
     f.close()
-
-    if len(folyok) == 0 :
-        print("Empty file!")
-        return 0
-    print(filename + " file content:")    
-    for f in folyok:
-        print(f[0]+" "+str(f[1]))
-
+    
