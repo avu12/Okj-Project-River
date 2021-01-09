@@ -1,4 +1,3 @@
-#TODO
 import getdata
 import fileoperations
 from pathlib import Path
@@ -12,10 +11,10 @@ def start_menu():
     print("Press 6, if you want to create a new file.")
     print("Press 7, if you want to add data to a file.")
 
+    
+    inp = input("Choosen number:")
     filename = input("Please give me the requested filename:\n")
     localpath =Path(__file__).with_name(filename)
-    inp = input("Choosen number:")
-    
     if inp == "1":
         getdata.min_river(localpath)
     elif inp == "2":
